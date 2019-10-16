@@ -1,9 +1,9 @@
-version: '3.7'
+version: '3.6'
 
 services:
   mariadb:
     image: mariadb:latest
-    environment:
+    environment: 
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=wp
 
@@ -11,8 +11,9 @@ services:
     image: phpmyadmin/phpmyadmin
     environment:
       - PMA_HOST=mariadb
+    volumes: .:/var/www/html
     ports:
-      - 8080:80
+      - 8080:80 
     depends_on:
       - mariadb
 
@@ -20,14 +21,12 @@ services:
     depends_on:
       - mariadb
     image: mailhog/mailhog
-    ports: 
+    ports:
       - 1025:1025
       - 8025:8025
 
-  volume:
-    build:
-    volumes: 
-      - ./index/:/var/www/html
-    image: httpd
-    ports: 
+  php:
+    image: php:7-apache
+    volumes: .:/var/www/html
+    ports:
       - 8000:80
