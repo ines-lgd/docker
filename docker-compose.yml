@@ -23,3 +23,11 @@ services:
     ports: 
       - 1025:1025
       - 8025:8025
+
+  volume:
+    build:
+    volumes: 
+      - ./index/:/var/www/html
+    image: mailhog/mailhog
+    ports: 
+      - 8000:80
