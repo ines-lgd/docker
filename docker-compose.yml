@@ -28,6 +28,6 @@ services:
     build:
     volumes: 
       - ./index/:/var/www/html
-    image: mailhog/mailhog
+    image: httpd
     ports: 
       - 8000:80
