@@ -1,2 +1,2 @@
-	cd [chemin du répertoire]
-	docker-compose up --build
+#Après avoir spécifié le répertoire, on entre la commande :
+	docker-compose up -d --build
