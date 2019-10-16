@@ -1,2 +1,2 @@
-	# cd [chemin du répertoire]]
-	# docker-compose up --build
+	cd [chemin du répertoire]]
+	docker-compose up --build
